@@ -56,6 +56,8 @@ group :development, :test do
   gem 'webdrivers', '~> 4.1'
   # Use rspec for back-end testing
   gem 'rspec-rails', '~> 3.8'
+  # For testing
+  gem 'factory_bot_rails', '~> 5.0'
   # Creates a clean slate for testing
   gem 'database_cleaner', '~> 1.7'
   # Use to access sessions in tests
