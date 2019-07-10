@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :borrows
   resources :books
   resources :libraries
   devise_for :students
