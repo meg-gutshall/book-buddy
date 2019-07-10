@@ -1,0 +1,2 @@
+class StudentsLibrary < ApplicationRecord
+end
