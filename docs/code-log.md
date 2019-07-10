@@ -2,4 +2,4 @@
 
 ## July 10
 
-Worked on the model implementation
+Worked on the model implementation, added devise, scaffold generation
