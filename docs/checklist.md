@@ -8,12 +8,22 @@ This app will be a book borrowing tracker for classroom and school libraries. St
 
 [ ] How will you implement a user submittable attribute on the join table of the many to many relationship?
 
+Renewal on a borrow
+
 [ ] What it is an ActiveRecord scope method and what is your implementation plan?
+
+Filter books by: library, author, genre
 
 [ ] What validations will you have for your models?
 
 [ ] How will you implement an authentication system?
 
+Devise
+
 [ ] What 3rd party login service will you use?
 
+GoodReads
+
 [ ] With the way your models are setup what nested routes will you use to meet the requirement?
+
+Books nested under libraries, borrows and holds nested under users, students and libraries nested under schools
