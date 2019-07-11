@@ -4,7 +4,7 @@ class CreateBorrows < ActiveRecord::Migration[5.2]
       t.belongs_to :student
       t.belongs_to :book
       t.date :due_date
-      t.boolean :renewal
+      t.boolean :renewed
 
       t.timestamps
     end
