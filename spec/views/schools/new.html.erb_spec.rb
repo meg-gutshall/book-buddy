@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "schools/new", type: :view do
   before(:each) do
     assign(:school, School.new(
-      :location => "MyString"
+      :name => "MyString"
     ))
   end
 
@@ -12,7 +12,7 @@ RSpec.describe "schools/new", type: :view do
 
     assert_select "form[action=?][method=?]", schools_path, "post" do
 
-      assert_select "input[name=?]", "school[location]"
+      assert_select "input[name=?]", "school[name]"
     end
   end
 end

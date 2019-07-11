@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :school do
-    location { "MyString" }
+    name { "MyString" }
   end
 end
