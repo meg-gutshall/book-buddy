@@ -36,3 +36,9 @@ Worked on the model implementation, added devise, scaffold generation
 
 [ ] Generator config in config/application.rb
 [ ] .gitignore file
+
+## Testing
+
+### Faker
+
+I used Faker to create seed data to use while testing my app. It was incredibly easy!
