@@ -1,7 +1,7 @@
 class CreateLibraries < ActiveRecord::Migration[5.2]
   def change
     create_table :libraries do |t|
-      t.string :school_name
+      t.belongs_to :school
       t.string :location
 
       t.timestamps
