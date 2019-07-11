@@ -1,0 +1,2 @@
+class Hold < ApplicationRecord
+end

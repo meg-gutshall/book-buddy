@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :holds
   resources :schools
   resources :borrows
   resources :books
