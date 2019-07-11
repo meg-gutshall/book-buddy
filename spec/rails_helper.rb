@@ -39,10 +39,17 @@ RSpec.configure do |config|
   ## Devise gem configuration ##
   ##--------------------------##
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
 
   ## Factory_bot_rails gem configuration ##
   ##-------------------------------------##
   config.include FactoryBot::Syntax::Methods
+
+  ## Faker gem configuration ##
+  ##-------------------------##
+  config.after(:each) do
+    Faker::UniqueGenerator.clear
+  end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
