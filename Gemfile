@@ -56,12 +56,17 @@ group :development, :test do
   gem 'webdrivers', '~> 4.1'
   # Use rspec for back-end testing
   gem 'rspec-rails', '~> 3.8'
-  # For testing
+  # Use to create test objects
   gem 'factory_bot_rails', '~> 5.0'
+  # Use to create dummy data for test instances
+  gem 'faker', '~> 1.9'
   # Creates a clean slate for testing
   gem 'database_cleaner', '~> 1.7'
   # Use to access sessions in tests
   gem 'rack_session_access', '~> 0.2.0'
+  # Provides one-line test code
+  gem 'shoulda-matchers', '~> 4.1'
+
 
   ## Other ##
   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -70,6 +75,8 @@ group :development, :test do
   gem 'coffee-rails', '~> 5.0'
   # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
   gem 'jbuilder', '~> 2.9'
+  # Cross-platform app compatibility helper
+  gem 'launchy', '~> 2.4'
 end
 
 group :development do
@@ -80,10 +87,4 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '~> 2.1'
   gem 'spring-watcher-listen', '~> 2.0'
-end
-
-group :test do
-  ## Seeding ##
-  # Use to create dummy data
-  gem 'faker', '~> 1.9'
 end
