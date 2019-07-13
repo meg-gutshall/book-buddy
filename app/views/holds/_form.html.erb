@@ -1,15 +1,5 @@
 <%= form_with(model: hold, local: true) do |form| %>
-  <% if hold.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(hold.errors.count, "error") %> prohibited this hold from being saved:</h2>
-
-      <ul>
-      <% hold.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: "partials/form_errors", locals: { resource: hold } %>
 
   <div class="field">
     <%= form.label :borrowed %>
