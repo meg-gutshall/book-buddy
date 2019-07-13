@@ -10,103 +10,93 @@ require 'faker'
 # Faker school objects
 2.times do
   School.create(
-    name: Faker::Address.unique.community
+    name: Faker::Address.community
   )
 end
 
 # Faker student objects
 12.times do
   Student.create(
-    first_name: Faker::Name.unique.first_name,
-    last_name: Faker::Name.unique.last_name,
-    password: Faker::Internet.unique.password,
-    email: "student@schoolname.edu",
-    school_id: 1
+    school_id: 1,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    password: Faker::Internet.password,
+    email: Faker::Internet.free_email
   )
 end
 
 15.times do
   Student.create(
-    first_name: Faker::Name.unique.first_name,
-    last_name: Faker::Name.unique.last_name,
-    password: Faker::Internet.unique.password,
-    email: "student@schoolname.edu",
-    school_id: 2
+    school_id: 2,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    password: Faker::Internet.password,
+    email: Faker::Internet.free_email
   )
 end
 
 # Faker library objects
 2.times do
   Library.create(
-    location: Faker::Number.unique.number(3),
-    school_id: 1
+    school_id: 1,
+    location: Faker::Number.number(3)
   )
 end
 
 3.times do
   Library.create(
-    location: Faker::Number.unique.number(3),
-    school_id: 2
+    school_id: 2,
+    location: Faker::Number.number(3)
   )
 end
 
 # Faker book objects
 44.times do
   Book.create(
-    title: Faker::Book.unique.title,
+    library_id: 1,
+    title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
-    on_shelf: Faker::Boolean.boolean(0.9),
-    library_id: 1
+    on_shelf: Faker::Boolean.boolean(0.9)
   )
 end
 
 83.times do
   Book.create(
-    title: Faker::Book.unique.title,
+    library_id: 2,
+    title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
-    on_shelf: Faker::Boolean.boolean(0.9),
-    library_id: 2
+    on_shelf: Faker::Boolean.boolean(0.9)
   )
 end
 
 54.times do
   Book.create(
-    title: Faker::Book.unique.title,
+    library_id: 3,
+    title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
-    on_shelf: Faker::Boolean.boolean(0.9),
-    library_id: 3
+    on_shelf: Faker::Boolean.boolean(0.9)
   )
 end
 
 67.times do
   Book.create(
-    title: Faker::Book.unique.title,
+    library_id: 4,
+    title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
-    on_shelf: Faker::Boolean.boolean(0.9),
-    library_id: 4
+    on_shelf: Faker::Boolean.boolean(0.9)
   )
 end
 
 57.times do
   Book.create(
-    title: Faker::Book.unique.title,
+    library_id: 5,
+    title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
-    on_shelf: Faker::Boolean.boolean(0.9),
-    library_id: 5
+    on_shelf: Faker::Boolean.boolean(0.9)
   )
-end
-
-
-# Optional parameter: true_ratio=0.5
-# Faker::Boolean.boolean(0.2) #=> false
-
-## Seed Helper Methods
-
-def school_domain
-  School.find_by(id: self.school_id).name
 end
