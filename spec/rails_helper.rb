@@ -7,6 +7,9 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rspec'
+require 'support/factory_bot'
+require 'support/devise'
+require 'support/shoulda_matchers'
 require 'database_cleaner'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -23,7 +26,7 @@ require 'database_cleaner'
 # require only the support files necessary.
 
 # Requires all files under spec/support
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
