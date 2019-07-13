@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "borrows/new", type: :view do
   before(:each) do
     assign(:borrow, Borrow.new(
-      :renewal => false
+      :renewed => false
     ))
   end
 
@@ -12,7 +12,7 @@ RSpec.describe "borrows/new", type: :view do
 
     assert_select "form[action=?][method=?]", borrows_path, "post" do
 
-      assert_select "input[name=?]", "borrow[renewal]"
+      assert_select "input[name=?]", "borrow[renewed]"
     end
   end
 end

@@ -4,10 +4,10 @@ RSpec.describe "borrows/index", type: :view do
   before(:each) do
     assign(:borrows, [
       Borrow.create!(
-        :renewal => false
+        :renewed => false
       ),
       Borrow.create!(
-        :renewal => false
+        :renewed => false
       )
     ])
   end

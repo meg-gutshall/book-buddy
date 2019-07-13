@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Due date</th>
-      <th>Renewal</th>
+      <th>Renewed</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
     <% @borrows.each do |borrow| %>
       <tr>
         <td><%= borrow.due_date %></td>
-        <td><%= borrow.renewal %></td>
+        <td><%= borrow.renewed %></td>
         <td><%= link_to 'Show', borrow %></td>
         <td><%= link_to 'Edit', edit_borrow_path(borrow) %></td>
         <td><%= link_to 'Destroy', borrow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
