@@ -1,24 +1,23 @@
 FactoryBot.define do
+  
+  # library factory with a `belongs_to` association for the school
+  factory :library do
+    location { Faker::Number.number(3) }
+    school
+  end
 
   # school factory without associations
   factory :school do
     name { Faker::Address.unique.community }
 
-    # school factory without associations
-    factory :school_with_students do
+    # school factory with `has_many` association for libraries
+    factory :school_with_libraries do
       transient do
-        students_count {10}
+        libraries_count {3}
       end
 
       after(:create) do |school, evaluator|
-        build_list(:students, evaluator.students_count, school: school)
-      end
-
-      factory :student do
-        association :school
-        first_name { Faker::Name.unique.first_name }
-        last_name { Faker::Name.unique.last_name }
-        email { "#{first_name}_#{last_name}@#{school.name}.edu".downcase }
+        create_list(:library, evaluator.libraries_count, school: school)
       end
 
     end

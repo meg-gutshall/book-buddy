@@ -1,5 +1,5 @@
-FactoryBot.define do
-  factory :library do
-    location { "MyString" }
-  end
-end
+# FactoryBot.define do
+#   factory :library do
+#     location { Room Number: Faker::Number.number(3) }
+#   end
+# end
