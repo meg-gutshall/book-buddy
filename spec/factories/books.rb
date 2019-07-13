@@ -1,8 +1,10 @@
 FactoryBot.define do
+  # book factory with `belongs_to` association on library
   factory :book do
-    title { "MyString" }
-    author { "MyString" }
-    genre { "MyString" }
-    on_shelf { false }
+    association :library
+    title { Faker::Book.title }
+    author { Faker::Book.author }
+    genre { Faker::Book.genre }
+    on_shelf { Faker::Boolean.boolean(0.9) }
   end
 end

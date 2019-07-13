@@ -1,6 +1,9 @@
 FactoryBot.define do
+  # borrow factory with `belongs_to` association on student and book
   factory :borrow do
-    due_date { "2019-07-10" }
-    renewal { false }
+    association :student
+    association :book
+    due_date { Faker::Date.between(6.days.ago, 8.days.from_now) }
+    renewal { Faker::Boolean.boolean(0.2) }
   end
 end
