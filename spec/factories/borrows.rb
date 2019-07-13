@@ -4,6 +4,6 @@ FactoryBot.define do
     association :student
     association :book
     due_date { Faker::Date.between(6.days.ago, 8.days.from_now) }
-    renewal { Faker::Boolean.boolean(0.2) }
+    renewed { Faker::Boolean.boolean(0.2) }
   end
 end
