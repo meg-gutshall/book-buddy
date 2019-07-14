@@ -9,4 +9,10 @@ class Student < ApplicationRecord
   has_many :books, through: :borrows
   has_many :holds
   has_many :books, through: :holds
+
+  # Class Methods
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
 end
