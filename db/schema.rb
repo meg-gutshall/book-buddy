@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_07_11_204304) do
   create_table "borrows", force: :cascade do |t|
     t.bigint "student_id"
     t.bigint "book_id"
-    t.date "due_date"
+    t.datetime "due_date"
     t.boolean "renewed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
