@@ -2,6 +2,8 @@
 
 ## Models
 
+### Associations
+
 Worked on project models and had a couple of false starts.
 
 I couldn't decide how to structure my models so I tried a few different implementations. My main models for the project were `Library`, `Book`, `Student`, and `Borrow`. I had the `Student` and `Book` models in a many-to-many relationship, using the `Borrow` model to create their join table. I also knew I wanted to create a many-to-many relationship between the `Student` and `Library` models but I hadn't decided how. I created a `StudentsLibrary` model to join them with the `has_many :through` statement but after further planning, I decided to create a `School` model that declares a `has_many` statement on both `Student` and `Library` models. That way, I could access students from libraries (`student.school.libraries`) and libraries from students (`library.school.students`). I also wanted a way for students to be able to put books on hold, so like the `Borrow` model, I created a `Hold` model to act as a join table between the `Student` and `Book` models.
@@ -16,9 +18,17 @@ The final setup looked like this:
 |  |  | `has_many :holds` | `has_many :holds` |  |
 |  |  | `has_many :books, through: :holds` | `has_many :students, through: :holds` |  |
 
+### Scope Methods
+
+[ ] Filters on libraries and books
+
+### Class Methods
+
+[ ] Define dates
+
 ## Setup
 
-Worked on the model implementation, added devise, scaffold generation
+Worked on the model implementation, added devise, scaffold generation, messed with `Gemfile` and `spec/rails_helper.rb` a lot
 
 ### Gemfile
 

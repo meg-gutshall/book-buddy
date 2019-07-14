@@ -5,6 +5,5 @@ class Library < ApplicationRecord
 
   # Scope methods
   scope :alphabetize_by_school, -> { joins(:school).order(:name) }
-  scope :group_by_room, -> { select(:location).group(:location) }
 
 end
