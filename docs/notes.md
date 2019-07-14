@@ -41,4 +41,10 @@ Worked on the model implementation, added devise, scaffold generation
 
 ### Faker
 
-I used Faker to create seed data to use while testing my app. It was incredibly easy!
+I used Faker to create seed data to use while testing my app.
+
+[ ] Had trouble clearing unique class values, instead opted for random
+
+### FactoryBot
+
+[ ] Issues with creating factories with associations
