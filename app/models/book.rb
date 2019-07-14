@@ -7,8 +7,8 @@ class Book < ApplicationRecord
   has_many :students, through: :holds
 
   # Scope methods
-  scope :alphabetize, -> { order(:title) }
-  scope :alphabetize_by_author, -> { select(:author).group(:author).order(:author) }
-  scope :group_by_genre, -> { select(:genre).group(:genre).order(:genre) }
+  scope :alphabetize_by_title, -> { order(:title, :author) }
+  scope :alphabetize_by_author, -> { order(:author, :title) }
+  scope :group_by_genre, -> { order(:genre, :title, :author) }
 
 end
