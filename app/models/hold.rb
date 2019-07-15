@@ -5,19 +5,21 @@ class Hold < ApplicationRecord
 
   # Set default: borrowed as false
   attribute :borrowed, :boolean, default: false
-    # create a borrow
-    if @borrowed == true
-      Borrow.new(
-        due_date: (Time.current + 2628000).strftime("%A, %B %e, %Y"),
-        renewed: false,
-        student_id: self.student_id,
-        book_id: self.book_id
-      )
-    end
-  end
 
-  def borrowed
-    @borrowed
-  end
+  before_validation :borrow_book
+
+        due_date: (Time.current + 2628000).strftime("%A, %B %e, %Y"),
+
+  private
+
+    # Creates a borrow if the hold is picked up
+    def borrow_book
+      if borrowed
+        Borrow.create(
+          student_id: self.student_id,
+          book_id: self.book_id
+        )
+      end
+    end
 
 end
