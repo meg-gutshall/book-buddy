@@ -3,8 +3,9 @@ class Borrow < ApplicationRecord
   belongs_to :student
   belongs_to :book
   
-  # Set default due date dependent on creation date
+  # Set defaults: due date dependent on creation date, renewed as false
   attribute :due_date, :string, default: (Time.current + 2628000).strftime("%A, %B %e, %Y")
+  attribute :renewed, :boolean, default: false
 
   before_validation :renew_book
 
