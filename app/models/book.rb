@@ -6,14 +6,15 @@ class Book < ApplicationRecord
   has_many :holds
   # has_many :students, through: :holds
 
-  # Add attributes: copies
+  ## Move to `app/helpers/books_helper.rb` ##
   # If there are > 0 available copies, show a borrow button
   # If there are 0 available copies, show a hold button
 
   attr_accessor :copies
 
   # Add attribute methods
-  attribute_method_suffix '_in_stock', '_checked_out'
+  attribute_method_prefix 'available_'
+  attribute_method_suffix '_borrowed'
   define_attribute_methods 'copies'
 
   # Scope methods
@@ -24,12 +25,14 @@ class Book < ApplicationRecord
 
   private
 
-    def attribute_in_stock(attribute)
-
+    # Returns how many copies of the book are currently available
+    def available_attribute(attribute)
+      # send(attribute)
     end
 
-    def attribute_checked_out(attribute)
-      
+    # Returns how many copies of the book are currently checked out
+    def attribute_borrowed(attribute)
+      # send(attribute)
     end
 
 end
