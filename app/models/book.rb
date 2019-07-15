@@ -4,7 +4,7 @@ class Book < ApplicationRecord
   has_many :borrows
   has_many :students, through: :borrows
   has_many :holds
-  has_many :students, through: :holds
+  # has_many :students, through: :holds
 
   # Scope methods
   scope :alphabetize_by_title, -> { order(:title, :author) }
