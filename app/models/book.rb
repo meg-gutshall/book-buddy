@@ -6,6 +6,8 @@ class Book < ApplicationRecord
   has_many :holds
   # has_many :students, through: :holds
 
+  # Add attributes: quantity
+
   # Scope methods
   scope :alphabetize_by_title, -> { order(:title, :author) }
   scope :alphabetize_by_author, -> { order(:author, :title) }

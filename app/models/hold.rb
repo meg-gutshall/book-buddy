@@ -8,7 +8,7 @@ class Hold < ApplicationRecord
 
   before_validation :borrow_book
 
-        due_date: (Time.current + 2628000).strftime("%A, %B %e, %Y"),
+  # Add attributes: available, notified (?), cancelled
 
   private
 

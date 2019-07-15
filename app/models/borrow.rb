@@ -9,6 +9,9 @@ class Borrow < ApplicationRecord
 
   before_validation :renew_book
 
+  # Add attributes: overdue, notified (?), returned (default: nil)
+  # If there is a hold on the book, students cannot renew it --> use book_id
+
   private
 
     # Adds two extra weeks to the due date
