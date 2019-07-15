@@ -7,6 +7,8 @@
     <tr>
       <th>Due date</th>
       <th>Renewed</th>
+      <th>Returned</th>
+      <th>Overdue</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +18,8 @@
       <tr>
         <td><%= borrow.due_date %></td>
         <td><%= borrow.renewed %></td>
+        <td><%= borrow.returned %></td>
+        <td><%= borrow.overdue %></td>
         <td><%= link_to 'Show', borrow %></td>
         <td><%= link_to 'Edit', edit_borrow_path(borrow) %></td>
         <td><%= link_to 'Destroy', borrow, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -10,5 +10,15 @@
   <%= @borrow.renewed %>
 </p>
 
+<p>
+  <strong>Returned:</strong>
+  <%= @borrow.returned %>
+</p>
+
+<p>
+  <strong>Overdue:</strong>
+  <%= @borrow.overdue %>
+</p>
+
 <%= link_to 'Edit', edit_borrow_path(@borrow) %> |
 <%= link_to 'Back', borrows_path %>

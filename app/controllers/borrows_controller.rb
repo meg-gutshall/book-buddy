@@ -69,6 +69,6 @@ class BorrowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def borrow_params
-      params.require(:borrow).permit(:due_date, :renewed)
+      params.require(:borrow).permit(:due_date, :renewed, :returned, :overdue)
     end
 end

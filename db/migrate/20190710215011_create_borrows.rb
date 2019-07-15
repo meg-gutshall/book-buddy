@@ -5,6 +5,8 @@ class CreateBorrows < ActiveRecord::Migration[5.2]
       t.belongs_to :book
       t.string :due_date
       t.boolean :renewed
+      t.boolean :returned
+      t.boolean :overdue
 
       t.timestamps
     end

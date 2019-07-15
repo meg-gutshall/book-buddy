@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe "borrows/show", type: :view do
   before(:each) do
     @borrow = assign(:borrow, Borrow.create!(
-      :renewed => false
+      :renewed => false,
+      :returned => false,
+      :overdue => false
     ))
   end
 

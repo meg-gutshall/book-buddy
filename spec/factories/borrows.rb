@@ -5,5 +5,7 @@ FactoryBot.define do
     association :book
     # due_date { (Time.current + 2628000).strftime("%A, %B %e, %Y") } --> Don't include attributes with defaults in factories
     # renewed { false } --> Don't include attributes with defaults in factories
+    # returned { false } --> Don't include attributes with defaults in factories
+    # overdue { false } --> Don't include attributes with defaults in factories
   end
 end
