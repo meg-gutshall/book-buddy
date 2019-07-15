@@ -3,6 +3,7 @@ FactoryBot.define do
   factory :borrow do
     association :student
     association :book
-    renewed { false }
+    # due_date { (Time.current + 2628000).strftime("%A, %B %e, %Y") } --> Don't include attributes with defaults in factories
+    # renewed { false } --> Don't include attributes with defaults in factories
   end
 end

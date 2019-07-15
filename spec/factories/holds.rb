@@ -3,6 +3,6 @@ FactoryBot.define do
   factory :hold do
     association :student
     association :book
-    borrowed { Faker::Boolean.boolean(0.7) }
+    # borrowed { false } --> Don't include attributes with defaults in factories
   end
 end
