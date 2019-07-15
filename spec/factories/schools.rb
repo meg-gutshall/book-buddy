@@ -64,7 +64,7 @@ FactoryBot.define do
     title { Faker::Book.title }
     author { Faker::Book.author }
     genre { Faker::Book.genre }
-    on_shelf { Faker::Boolean.boolean(0.9) }
+    copies { Faker::Number.between(1, 3) }
   end
 
 end

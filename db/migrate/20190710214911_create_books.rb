@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :author
       t.string :genre
-      t.boolean :on_shelf
+      t.integer :copies
 
       t.timestamps
     end

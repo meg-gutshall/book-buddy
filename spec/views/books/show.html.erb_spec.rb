@@ -6,7 +6,7 @@ RSpec.describe "books/show", type: :view do
       :title => "Title",
       :author => "Author",
       :genre => "Genre",
-      :on_shelf => false
+      :copies => false
     ))
   end
 
