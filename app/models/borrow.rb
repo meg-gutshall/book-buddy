@@ -5,21 +5,16 @@ class Borrow < ApplicationRecord
   
   # Set default due date dependent on creation date
   attribute :due_date, :string, default: (Time.current + 2628000).strftime("%A, %B %e, %Y")
-    @due_date
-  end
 
-  def due_date=(due_date)
-    @due_date = (Time.current + 2628000).strftime("%A, %B %e, %Y")
-  end
+  before_validation :renew_book
 
-  def renewed
-    @renewed
-  end
+  private
 
-  def renewed=(renewed)
-    if @renewed == true
-      self.update(due_date: nil)
+    # Adds two extra weeks to the due date
+    def renew_book
+      if renewed
+        self.due_date = (self.created_at + 3838000).strftime("%A, %B %e, %Y")
+      end
     end
-  end
 
 end
