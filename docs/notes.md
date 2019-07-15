@@ -20,11 +20,12 @@ The final setup looked like this:
 
 ### Scope Methods
 
-[ ] Filters on libraries and books
+[ ] Libraries: group by school name
+[ ] Books: alphabetize by title, author, or genre
 
 ### Class Methods
 
-[ ] Define dates
+[ ] Define dates (Work on this more...)
 
 ## Setup
 
@@ -41,6 +42,8 @@ Worked on the model implementation, added devise, scaffold generation, messed wi
 ### Devise
 
 [ ] Setup process
+[ ] Generating views
+[ ] Generating controllers
 
 ### Configurations
 
