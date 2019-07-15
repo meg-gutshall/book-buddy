@@ -3,7 +3,6 @@ FactoryBot.define do
   factory :borrow do
     association :student
     association :book
-    due_date { Faker::Date.between(6.days.ago, 8.days.from_now) }
     renewed { false }
   end
 end
