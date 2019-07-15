@@ -3,9 +3,21 @@ class Hold < ApplicationRecord
   belongs_to :student
   belongs_to :book
 
-  # Scope methods
-  # def borrowed
-  #   create a borrow
-  # end
+  # Custom Reader/Writer Methods
+  def borrowed=(borrowed)
+    # create a borrow
+    if @borrowed == true
+      Borrow.new(
+        due_date: (Time.current + 2628000).strftime("%A, %B %e, %Y"),
+        renewed: false,
+        student_id: self.student_id,
+        book_id: self.book_id
+      )
+    end
+  end
+
+  def borrowed
+    @borrowed
+  end
 
 end

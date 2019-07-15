@@ -3,16 +3,23 @@ class Borrow < ApplicationRecord
   belongs_to :student
   belongs_to :book
 
-  # Custom Reader/Writer Methods
-  def due_date=(due_date)
-    @due_date = (Time.current + 2628000).strftime("%A, %B %e, %Y")
-    if renewed
-      (Time.current + 3838000).strftime("%A, %B %e, %Y")
-    end
-  end
-
+  # Custom Reader/Writer Methods  
   def due_date
     @due_date
+  end
+
+  def due_date=(due_date)
+    @due_date = (Time.current + 2628000).strftime("%A, %B %e, %Y")
+  end
+
+  def renewed
+    @renewed
+  end
+
+  def renewed=(renewed)
+    if @renewed == true
+      self.update(due_date: nil)
+    end
   end
 
 end
