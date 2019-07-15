@@ -7,8 +7,8 @@ class Student < ApplicationRecord
   belongs_to :school
   has_many :borrows
   has_many :books, through: :borrows
-  has_many :holds
-  has_many :books, through: :holds
+  has_many :holds, through: :books
+  # has_many :books, through: :holds
 
   # Class Methods
   def full_name
