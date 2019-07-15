@@ -1,10 +1,10 @@
 class Hold < ApplicationRecord
-  # attributes: { created_at:datetime, borrowed:boolean, student_id:integer, book_id:integer }
+  # attributes: { borrowed:boolean, student_id:integer, book_id:integer }
   belongs_to :student
   belongs_to :book
 
-  # Custom Reader/Writer Methods
-  def borrowed=(borrowed)
+  # Set default: borrowed as false
+  attribute :borrowed, :boolean, default: false
     # create a borrow
     if @borrowed == true
       Borrow.new(
