@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "libraries/new", type: :view do
   before(:each) do
     assign(:library, Library.new(
-      :location => "MyString"
+      :room_number => "MyString"
     ))
   end
 
@@ -12,7 +12,7 @@ RSpec.describe "libraries/new", type: :view do
 
     assert_select "form[action=?][method=?]", libraries_path, "post" do
 
-      assert_select "input[name=?]", "library[location]"
+      assert_select "input[name=?]", "library[room_number]"
     end
   end
 end

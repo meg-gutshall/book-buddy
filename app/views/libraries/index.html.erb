@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Location</th>
+      <th>Room Number</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
   <tbody>
     <% @libraries.each do |library| %>
       <tr>
-        <td><%= library.location %></td>
+        <td><%= library.room_number %></td>
         <td><%= link_to 'Show', library %></td>
         <td><%= link_to 'Edit', edit_library_path(library) %></td>
         <td><%= link_to 'Destroy', library, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -29,7 +29,7 @@ class LibrariesController < ApplicationController
     respond_to do |format|
       if @library.save
         format.html { redirect_to @library, notice: 'Library was successfully created.' }
-        format.json { render :show, status: :created, location: @library }
+        format.json { render :show, status: :created, room_number: @library }
       else
         format.html { render :new }
         format.json { render json: @library.errors, status: :unprocessable_entity }
@@ -43,7 +43,7 @@ class LibrariesController < ApplicationController
     respond_to do |format|
       if @library.update(library_params)
         format.html { redirect_to @library, notice: 'Library was successfully updated.' }
-        format.json { render :show, status: :ok, location: @library }
+        format.json { render :show, status: :ok, room_number: @library }
       else
         format.html { render :edit }
         format.json { render json: @library.errors, status: :unprocessable_entity }
@@ -69,6 +69,6 @@ class LibrariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def library_params
-      params.require(:library).permit(:location)
+      params.require(:library).permit(:room_number)
     end
 end

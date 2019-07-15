@@ -3,7 +3,7 @@
 #   # library factory with a `belongs_to` association for the school
 #   factory :library do
 #     school
-#     location { Faker::Number.number(3) }
+#     room_number { Faker::Number.number(3) }
 #   end
 
 #   # school factory without associations

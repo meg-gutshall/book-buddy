@@ -1,5 +1,5 @@
 class Library < ApplicationRecord
-  # attributes: { location:string, school_id:integer }
+  # attributes: { room_number:integer, school_id:integer }
   has_many :books
   belongs_to :school
 
