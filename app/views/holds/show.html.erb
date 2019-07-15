@@ -1,8 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Available:</strong>
+  <%= @hold.available %>
+</p>
+
+<p>
   <strong>Borrowed:</strong>
   <%= @hold.borrowed %>
+</p>
+
+<p>
+  <strong>Cancelled:</strong>
+  <%= @hold.cancelled %>
 </p>
 
 <%= link_to 'Edit', edit_hold_path(@hold) %> |

@@ -4,10 +4,14 @@ RSpec.describe "holds/index", type: :view do
   before(:each) do
     assign(:holds, [
       Hold.create!(
+        :available => false
         :borrowed => false
+        :cancelled => false
       ),
       Hold.create!(
+        :available => false
         :borrowed => false
+        :cancelled => false
       )
     ])
   end

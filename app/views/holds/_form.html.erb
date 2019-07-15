@@ -2,8 +2,18 @@
   <%= render partial: "partials/form_errors", locals: { resource: hold } %>
 
   <div class="field">
+    <%= form.label :available %>
+    <%= form.check_box :available %>
+  </div>
+
+  <div class="field">
     <%= form.label :borrowed %>
     <%= form.check_box :borrowed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cancelled %>
+    <%= form.check_box :cancelled %>
   </div>
 
   <div class="actions">

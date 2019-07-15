@@ -3,6 +3,8 @@ FactoryBot.define do
   factory :hold do
     association :student
     association :book
+    # available { false } --> Don't include attributes with defaults in factories
     # borrowed { false } --> Don't include attributes with defaults in factories
+    # cancelled { false } --> Don't include attributes with defaults in factories
   end
 end

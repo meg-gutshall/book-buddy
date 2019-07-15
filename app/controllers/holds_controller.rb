@@ -69,6 +69,6 @@ class HoldsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hold_params
-      params.require(:hold).permit(:borrowed)
+      params.require(:hold).permit(:available, :borrowed, :cancelled)
     end
 end
