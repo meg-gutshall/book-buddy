@@ -2,6 +2,7 @@ FactoryBot.define do
 
   # school factory without associations
   factory :school do
+    admin
     name { Faker::Address.unique.community }
 
     # school factory with `has_many` association for students

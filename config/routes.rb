@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  devise_for :students
+
   root to: 'welcome#home'
   
   resources :holds
@@ -7,6 +10,5 @@ Rails.application.routes.draw do
   resources :books
   resources :libraries
   resources :students
-  devise_for :students
 
 end
