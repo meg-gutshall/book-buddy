@@ -10,7 +10,7 @@ class Borrow < ApplicationRecord
   attribute :renewed, :boolean, default: false
   attribute :returned, :boolean, default: false  # Method for prefix is defined here
   attribute :overdue, :boolean, default: false
-  attribute_method_prefix 'date_'
+  # attribute_method_prefix 'date_'
 
   # Scope Methods
   scope :current_borrows, -> { where(returned: false) }
@@ -33,8 +33,8 @@ class Borrow < ApplicationRecord
     # end
 
     # TODO: Record the date the book was returned
-    def date_attribute(attribute)
-      send(attribute)
-    end
+    # def date_attribute(attribute)
+    #   send(attribute)
+    # end
 
 end

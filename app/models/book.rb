@@ -16,8 +16,8 @@ class Book < ApplicationRecord
   # TODO: Use properties from borrows to create this instead
   # Add attribute methods
   attribute :copies, :integer
-  attribute_method_prefix 'available_'
-  attribute_method_suffix '_currently_borrowed'
+  # attribute_method_prefix 'available_'
+  # attribute_method_suffix '_currently_borrowed'
 
   # Scope methods
   scope :alphabetize_by_title, -> { order(:title, :author) }
@@ -34,13 +34,13 @@ class Book < ApplicationRecord
     end
 
     # Return how many copies of the book are currently available
-    def available_attribute(attribute)
-      send(attribute), self.copies - attribute_currently_borrowed(attribute)
-    end
+    # def available_attribute(attribute)
+    #   send(attribute), self.copies - attribute_currently_borrowed(attribute)
+    # end
 
     # Return how many copies of the book are currently checked out
-    def attribute_currently_borrowed(attribute)
-      send("#{attribute}=", self.borrows.current_borrows.count)
-    end
+    # def attribute_currently_borrowed(attribute)
+    #   send("#{attribute}=", self.borrows.current_borrows.count)
+    # end
 
 end
