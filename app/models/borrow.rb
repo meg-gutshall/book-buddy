@@ -3,33 +3,38 @@ class Borrow < ApplicationRecord
   belongs_to :student
   belongs_to :book
   
-  # Set defaults: due date dependent on creation date, renewed, returned, and overdue as false
-  attribute :due_date, :string, default: (Time.current + 2628000).strftime("%A, %B %e, %Y")
-  attribute :renewed, :boolean, default: false
-  attribute :returned, :boolean, default: false
-  attribute :overdue, :boolean, default: false
-
   before_validation :renew_book
 
   # Add attribute methods
+  attribute :due_date, :string, default: (Time.current + 2628000).strftime("%A, %B %e, %Y")
+  attribute :renewed, :boolean, default: false
+  attribute :returned, :boolean, default: false  # Method for prefix is defined here
+  attribute :overdue, :boolean, default: false
   attribute_method_prefix 'date_'
-  define_attribute_methods 'returned'
+
+  # Scope Methods
+  scope :current_borrows, -> { where(returned: false) }
 
   # Class Methods
-  # If there is a hold on the book, students cannot renew it --> use book_id
+  # TODO: If there is a hold on the book, students cannot renew it --> use book_id
 
   private
 
-    # Adds two extra weeks to the due date
+    # Add two extra weeks to the due date
     def renew_book
       if renewed
         self.due_date = (self.created_at + 3838000).strftime("%A, %B %e, %Y")
       end
     end
 
-    # Records the date the book was returned
+    # Define the returned attribute
+    # def attribute(attribute)
+    #   send(attribute)
+    # end
+
+    # TODO: Record the date the book was returned
     def date_attribute(attribute)
-      # send(attribute)
+      send(attribute)
     end
 
 end
