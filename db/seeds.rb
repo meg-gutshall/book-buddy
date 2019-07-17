@@ -15,7 +15,7 @@ require 'faker'
 end
 
 # Faker student objects
-12.times do
+58.times do
   Student.create(
     school_id: 1,
     first_name: Faker::Name.first_name,
@@ -25,7 +25,7 @@ end
   )
 end
 
-15.times do
+74.times do
   Student.create(
     school_id: 2,
     first_name: Faker::Name.first_name,
@@ -39,14 +39,14 @@ end
 2.times do
   Library.create(
     school_id: 1,
-    location: Faker::Number.number(3)
+    name: Faker::Number.number(3)
   )
 end
 
 3.times do
   Library.create(
     school_id: 2,
-    location: Faker::Number.number(3)
+    name: Faker::Number.number(3)
   )
 end
 
@@ -57,7 +57,7 @@ end
     title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
-    on_shelf: Faker::Boolean.boolean(0.9)
+    copies: Faker::Number.between(1, 3)
   )
 end
 
@@ -67,7 +67,7 @@ end
     title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
-    on_shelf: Faker::Boolean.boolean(0.9)
+    copies: Faker::Number.between(1, 3)
   )
 end
 
@@ -77,7 +77,7 @@ end
     title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
-    on_shelf: Faker::Boolean.boolean(0.9)
+    copies: Faker::Number.between(1, 3)
   )
 end
 
@@ -87,7 +87,7 @@ end
     title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
-    on_shelf: Faker::Boolean.boolean(0.9)
+    copies: Faker::Number.between(1, 3)
   )
 end
 
@@ -97,6 +97,6 @@ end
     title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
-    on_shelf: Faker::Boolean.boolean(0.9)
+    copies: Faker::Number.between(1, 3)
   )
 end
