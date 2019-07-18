@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins, path: 'admin'
   devise_for :students
 
   root to: 'welcome#home'

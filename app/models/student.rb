@@ -6,8 +6,6 @@ class Student < ApplicationRecord
   has_many :holds, through: :books
 
   devise :database_authenticatable, :omniauthable, :registerable, :rememberable, :validatable
-  before_action :authenticate_student!
-  # Helpers: student_signed_in?, current_student, student_session
 
   # Class Methods: full_name
 

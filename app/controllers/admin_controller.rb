@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
+  # Helpers (use with before_action): authenticate_admin!, admin_signed_in?, current_admin, admin_session
 
   # GET /admin
   def index
