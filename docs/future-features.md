@@ -15,3 +15,7 @@ end
 ### Purpose
 
 A student can add themselves to a book's wait list if the book they want is checked out of the library. When the book is returned, the next student on the wait list gets notified and is allowed to borrow the book. They will have a time constraint to respond to the notification (i.e. check out the book) before the next student on the wait list is notified.
+
+## Scrape Info via ISBN
+
+Scrape all information via ISBN.
