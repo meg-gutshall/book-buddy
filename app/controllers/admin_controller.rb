@@ -44,7 +44,7 @@ class AdminController < ApplicationController
   def destroy
     @admin.destroy
     
-    redirect_to admin_index_url, notice: 'Admin was successfully destroyed.'
+    redirect_to admins_path, notice: 'Admin was successfully destroyed.'
   end
 
   private
