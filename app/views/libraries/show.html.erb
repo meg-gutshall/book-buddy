@@ -5,5 +5,7 @@
   <%= @library.room_number %>
 </p>
 
+
+<%= link_to "Books", library_books_path(params[:id]) %><br><br>
 <%= link_to 'Edit', edit_library_path(@library) %> |
 <%= link_to 'Back', libraries_path %>

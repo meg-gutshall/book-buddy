@@ -15,5 +15,8 @@
   <%= @student.email %>
 </p>
 
+
+<%= link_to "Borrows", student_borrows_path(params[:id]) %> | 
+<%= link_to "Holds", student_holds_path(params[:id]) %><br><br>
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

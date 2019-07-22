@@ -1,2 +1,13 @@
 <%# Home Page %>
 <h1>HOME PAGE</h1>
+
+<h2>Index Links</h2>
+<% if current_admin %>
+  <%= link_to "Admin", admin_path(current_admin) %><br>
+<% end %>
+<%= link_to "Schools", schools_path %><br>
+<%= link_to "Students", students_path %><br>
+<%= link_to "Libraries", libraries_path %><br>
+<%= link_to "Books", books_path %><br>
+<%= link_to "Holds", holds_path %><br>
+<%= link_to "Borrows", borrows_path %><br>

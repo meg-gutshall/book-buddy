@@ -5,7 +5,8 @@
   <%= @school.name %>
 </p>
 
-<%# TODO: Add libraries with links %>
 
-<%= link_to 'Edit', edit_school_path(@school) %> |
+<%= link_to "Students", school_students_path(params[:id]) %> | 
+<%= link_to "Libraries", school_libraries_path(params[:id]) %><br><br>
+<%= link_to 'Edit', edit_school_path(@school) %> | 
 <%= link_to 'Back', schools_path %>
