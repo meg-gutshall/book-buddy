@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   root to: 'welcome#home'
 
-  resources :schools
+  resources :admins, path: 'admin'
+  devise_for :admins, path: 'admin', controllers: { sessions: 'admins/sessions', registrations: 'admins/registrations' }
+  
   resources :students
+  devise_for :students, controllers: { sessions: 'students/sessions', registrations: 'students/registrations' }
+  
+  resources :schools
   
   resources :libraries
   resources :books
@@ -18,9 +23,6 @@ Rails.application.routes.draw do
     resources :holds
   end
   
-  devise_for :admins, path: 'admin', controllers: { sessions: 'admins/sessions', registrations: 'admins/registrations' }
-  devise_for :students, controllers: { sessions: 'students/sessions', registrations: 'students/registrations' }
-    
   resources :schools do
     resources :students
     resources :libraries
