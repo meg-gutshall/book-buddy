@@ -19,10 +19,10 @@ Rails.application.routes.draw do
   end
   
   devise_for :admins, path: 'admin', controllers: { sessions: 'admins/sessions', registrations: 'admins/registrations' }
-  
+  devise_for :students, controllers: { sessions: 'students/sessions', registrations: 'students/registrations' }
+    
   resources :schools do
     resources :students
-    devise_for :students, controllers: { sessions: 'students/sessions', registrations: 'students/registrations' }
     resources :libraries
   end
   
