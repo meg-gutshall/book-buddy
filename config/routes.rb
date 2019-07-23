@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root to: 'welcome#home'
 
+  devise_for :admins, path: 'admin', controllers: { sessions: 'admin/sessions', registrations: 'admin/registrations' }
   resources :admins, path: 'admin'
-  devise_for :admins, path: 'admin', controllers: { sessions: 'admins/sessions', registrations: 'admins/registrations' }
   
-  resources :students
   devise_for :students, controllers: { sessions: 'students/sessions', registrations: 'students/registrations' }
+  resources :students
   
   resources :schools
   
