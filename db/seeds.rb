@@ -7,31 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-# Faker admin objects
+# Admin object
 Admin.create(
-  first_name: Faker::Name.first_name,
-  last_name: Faker::Name.last_name,
-  password: Faker::Internet.password,
-  email: Faker::Internet.free_email
-)
-
-Admin.create(
-  first_name: Faker::Name.first_name,
-  last_name: Faker::Name.last_name,
-  password: Faker::Internet.password,
-  email: Faker::Internet.free_email
+  first_name: "Meg",
+  last_name: "Gutshall",
+  password: "password",
+  email: "eggs4megs@meg.com"
 )
 
 # Faker school objects
-School.create(
-  admin_id: 1,
-  name: Faker::Address.community
-)
-
-School.create(
-  admin_id: 2,
-  name: Faker::Address.community
-)
+2.times do
+  School.create(
+    admin_id: 1,
+    name: Faker::Address.community
+  )
+end
 
 # Faker student objects
 58.times do
