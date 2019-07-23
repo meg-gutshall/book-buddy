@@ -14,6 +14,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :school %><br />
+    <%= f.collection_select :school_id, School.all, :id, :name, autofocus: true, autocomplete: "school" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
