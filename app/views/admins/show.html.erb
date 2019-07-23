@@ -2,14 +2,14 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @admin.full_name %>
+  <%= current_admin.full_name %>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @admin.email %>
+  <%= current_admin.email %>
 </p>
 
-<%= link_to "Edit", edit_admin_path(@admin) %> | 
+<%= link_to "Edit", edit_admin_path(current_admin) %> | 
 <%= link_to "Back", admins_path %> | 
 <%= link_to "Home", root_path %>
