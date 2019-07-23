@@ -1,13 +1,13 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
-  config.cache_classes = false
+  config.cache_classes = true
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = true
 
   # Show full error reports.
   config.consider_all_requests_local = true
@@ -61,4 +61,10 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # Allows Devise to run
+  # config.middleware.delete Rack::Lock
+  # config.reload_classes_only_on_change = false
+  # config.allow_concurrency = false
+
 end

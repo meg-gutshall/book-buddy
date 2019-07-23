@@ -21,5 +21,8 @@ module BookBuddy
       g.jbuilder        false
     end
 
+    # Control which files get eager loaded
+    # config.eager_load_paths += Dir["#{Rails.root}/**/"]
+
   end
 end
