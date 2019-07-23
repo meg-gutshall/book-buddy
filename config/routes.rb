@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   root to: 'welcome#home'
 
-  devise_for :admins
+  devise_for :admins, controllers: { passwords: 'admins/passwords', registrations: 'admins/registrations', sessions: 'admins/sessions' }
   resources :admins
   
-  devise_for :students
+  devise_for :students, controllers: { omniauth: 'students/omniauth', passwords: 'students/passwords', registrations: 'students/registrations', sessions: 'students/sessions' }
   resources :students
   
   resources :schools
