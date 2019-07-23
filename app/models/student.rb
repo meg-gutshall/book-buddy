@@ -5,7 +5,7 @@ class Student < ApplicationRecord
   has_many :books, through: :borrows
   has_many :holds, through: :books
 
-  devise :database_authenticatable, :omniauthable, :registerable, :rememberable, :validatable
+  devise :database_authenticatable, :omniauthable, :registerable, :recoverable, :rememberable, :validatable
 
   # Class Methods: full_name
 
