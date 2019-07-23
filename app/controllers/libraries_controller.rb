@@ -1,5 +1,6 @@
 class LibrariesController < ApplicationController
   before_action :set_library, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /libraries
   def index

@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  # Helpers (use with before_action): authenticate_student!, student_signed_in?, current_student, student_session
-
+  before_action :admin_only, only: [:new, :create, :edit, :update, :destroy]
+  
   # GET /students
   def index
     @students = Student.all
