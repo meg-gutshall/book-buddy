@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :admins, path: 'admin', only: [:show]
   
   devise_for :students, controllers: { omniauth: "students/omniauth", passwords: "students/passwords", registrations: "students/registrations", sessions: "students/sessions" }
-  resources :students, only: [:show]
+  resources :students, only: [:index, :show]
   
   resources :schools
   
