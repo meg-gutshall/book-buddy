@@ -1,6 +1,12 @@
 <%# Home Page %>
 <h1>HOME PAGE</h1>
 
+<h3>Session & Registration Links</h3>
+<%= link_to "Admin Login", new_admin_session_path %> | <%= link_to "Admin Logout", destroy_admin_session_path, method: :delete %><br>
+<%= link_to "Create New Admin", new_admin_registration_path %><br><br>
+<%= link_to "Student Login", new_student_session_path %> | <%= link_to "Student Logout", destroy_student_session_path, method: :delete %><br>
+<%= link_to "Create New Student", new_student_registration_path %><br><br>
+
 <h2>Index Links</h2>
 <% if current_admin %>
   <%= link_to "Admin", admin_path(current_admin) %><br>
