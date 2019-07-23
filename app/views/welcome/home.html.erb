@@ -8,7 +8,7 @@
 <%= link_to "Create New Student", new_student_registration_path %><br><br>
 
 <h2>Index Links</h2>
-<% unless student_signed_in? %>
+<% if !!current_admin %>
   <%= link_to "Admin", admin_path(current_admin) %><br>
 <% end %>
 <%= link_to "Schools", schools_path %><br>
