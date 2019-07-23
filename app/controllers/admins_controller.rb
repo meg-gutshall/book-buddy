@@ -1,4 +1,4 @@
-class AdminController < ApplicationController
+class AdminsController < ApplicationController
   before_action :current_admin_only, only: [:edit, :update, :destroy]
   before_action :admin_only
 
