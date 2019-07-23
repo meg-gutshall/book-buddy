@@ -3,10 +3,16 @@ class ApplicationController < ActionController::Base
   helper_method :admin_only
 
   def admin_only
-    if !!current_student
+    if current_student
       redirect_to current_student, alert: "Permission denied: You do not have admin access."
     end
   end
+
+  # def current_admin_only
+  #   if !!current_admin
+  #     redirect_to current_admin, alert: "Permission denied: You may not edit or delete other admin accounts."
+  #   end
+  # end
 
   # Helper Methods provided by Devise
 
