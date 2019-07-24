@@ -1,5 +1,10 @@
 module ApplicationHelper
-
-  # TODO: Add hide button helper to hide edit and delete buttons for non-admins
+  # TODO: Create index table layouts for admin and non-admin users
+  
+  def hide_admin_action(link_code)
+    if !!current_admin
+      link_code
+    end
+  end
   
 end
