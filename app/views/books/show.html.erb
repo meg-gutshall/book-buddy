@@ -20,9 +20,11 @@
   <%= @book.copies %>
 </p>
 
-
-<%= link_to "Borrows", book_borrows_path(params[:id]) %> | 
-<%= link_to "Holds", book_holds_path(params[:id]) %><br><br>
-<%= link_to "Edit", edit_book_path(@book) %> | 
+<%= link_to 'New Borrow', new_borrow_path %> | 
+<%= link_to 'New Hold', new_hold_path %><br><br>
+<%= hide_admin_action(link_to "Borrows History", book_borrows_path(@book)) %><%= hide_admin_action(" | ") %>
+<%= hide_admin_action(link_to "Holds History", book_holds_path(@book)) %>
+<%= hide_admin_action(tag.br) %><%= hide_admin_action(tag.br) %>
+<%= hide_admin_action(link_to "Edit", edit_book_path(@book)) %><%= hide_admin_action(" | ") %>
 <%= link_to "Back", books_path %> | 
 <%= link_to "Home", root_path %>

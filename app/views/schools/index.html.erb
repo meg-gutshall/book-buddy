@@ -24,5 +24,6 @@
 
 <br>
 
-<%= link_to 'New School', new_school_path %><br><br>
+<%= hide_admin_action(link_to 'New School', new_school_path) %>
+<%= hide_admin_action(tag.br) %><%= hide_admin_action(tag.br) %>
 <%= link_to "Home", root_path %>

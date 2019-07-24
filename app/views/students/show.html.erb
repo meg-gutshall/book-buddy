@@ -2,22 +2,24 @@
 
 <p>
   <strong>Name:</strong>
-  <%= current_student.full_name %>
+  <%= @student.full_name %>
 </p>
 
 <p>
   <strong>School name:</strong>
-  <%= current_student.school.name %>
+  <%= @student.school.name %>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= current_student.email %>
+  <%= @student.email %>
 </p>
 
-
-<%= link_to "Borrows", student_borrows_path(current_student) %> | 
-<%= link_to "Holds", student_holds_path(current_student) %><br><br>
-<%= link_to "Edit", edit_student_registration_path(current_student) %> | 
+<%= link_to 'New Borrow', new_borrow_path %> | 
+<%= link_to 'New Hold', new_hold_path %><br><br>
+<%= hide_admin_action(link_to "Borrows History", student_borrows_path(@student)) %><%= hide_admin_action(" | ") %>
+<%= hide_admin_action(link_to "Holds History", student_holds_path(@student)) %>
+<%= hide_admin_action(tag.br) %><%= hide_admin_action(tag.br) %>
+<%= link_to "Edit", edit_student_registration_path(@student) %> | 
 <%= link_to "Back", students_path %> | 
 <%= link_to "Home", root_path %>

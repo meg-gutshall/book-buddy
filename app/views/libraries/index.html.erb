@@ -24,5 +24,6 @@
 
 <br>
 
-<%= link_to 'New Library', new_library_path %><br><br>
+<%= hide_admin_action(link_to 'New Library', new_library_path) %>
+<%= hide_admin_action(tag.br) %><%= hide_admin_action(tag.br) %>
 <%= link_to "Home", root_path %>

@@ -30,5 +30,6 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %><br><br>
+<%= hide_admin_action(link_to 'New Book', new_book_path) %>
+<%= hide_admin_action(tag.br) %><%= hide_admin_action(tag.br) %>
 <%= link_to "Home", root_path %>

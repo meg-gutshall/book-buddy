@@ -6,8 +6,9 @@
 </p>
 
 
-<%= link_to "Students", school_students_path(params[:id]) %> | 
-<%= link_to "Libraries", school_libraries_path(params[:id]) %><br><br>
-<%= link_to "Edit", edit_school_path(@school) %> | 
+<%= link_to "Students", school_students_path(@school) %> | 
+<%= link_to "Libraries", school_libraries_path(@school) %><br><br>
+
+<%= hide_admin_action(link_to "Edit", edit_school_path(@school)) %><%= hide_admin_action(" | ") %>
 <%= link_to "Back", schools_path %> | 
 <%= link_to "Home", root_path %>
