@@ -49,7 +49,7 @@ class HoldsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions
     def set_hold
-      @hold = Hold.find(params[:id])
+      @hold = Hold.find_by(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through

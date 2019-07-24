@@ -50,7 +50,7 @@ class LibrariesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions
     def set_library
-      @library = Library.find(params[:id])
+      @library = Library.find_by(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through

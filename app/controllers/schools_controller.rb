@@ -51,7 +51,7 @@ class SchoolsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions
     def set_school
-      @school = School.find(params[:id])
+      @school = School.find_by(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through

@@ -49,7 +49,7 @@ class BorrowsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions
     def set_borrow
-      @borrow = Borrow.find(params[:id])
+      @borrow = Borrow.find_by(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through
