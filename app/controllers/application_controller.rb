@@ -4,8 +4,22 @@ class ApplicationController < ActionController::Base
 
   def admin_only
     if !!current_student
-      redirect_to root_path, alert: "Permission denied: You do not have admin access."
+      flash[:alert] = "Permission denied: You do not have admin access."
+      redirect_to root_path and return
     end
+  end
+
+  def student_school_stray
+    if current_student.school_id != School.find_by(id: params[:id])
+      flash[:alert] = "Permission denied: You may not view or edit another students' content."
+      redirect_to root_path and return
+    end
+  end
+
+  def admin_district_stray
+    current_admin.school_ids.include?(params[:id])
+      flash[:alert] = "Permission denied: You may not view or edit another school districts' content."
+      redirect_to root_path and return
   end
 
   # Helper Methods provided by Devise
