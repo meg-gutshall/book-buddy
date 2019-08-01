@@ -1,6 +1,7 @@
 class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
-  before_action :admin_only, only: [:new, :create, :edit, :update, :destroy]
+  before_action :admin_district_stray, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only
 
   # GET /schools
   def index
