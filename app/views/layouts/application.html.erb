@@ -16,8 +16,23 @@
   <body>
     <div id="page-content"> <%# Add for sticky footer %>
     <p class="alert"><%= alert %></p>
+      <div class="container-fluid wrapper"> <%# Start body %>      
+        <div class="row">
+          <%# Flash message for errors %>
+          <% if flash[:alert] %>
+            <div class="col-12 justify-content-center alert alert-dark" role="alert">
+              <%= flash[:alert] %>
+            </div>
+          <% end %>
+          <% if flash[:notice] %>
+            <div class="col-12 justify-content-center alert alert-info" role="alert">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+        </div>
 
-    <%= yield %>
+        <%= yield %>
+      </div> <%# End body %>
     </div> <%# Add for sticky footer %>
 
     <div class="container-fluid d-flex flex-column"> <%# Start footer %>
