@@ -13,9 +13,41 @@
     <title><%= @title %></title>
   </head>
 
-  <body>
+  <body class="d-flex flex-column">
     <div id="page-content"> <%# Add for sticky footer %>
-    <p class="alert"><%= alert %></p>
+      <div class="container-fluid"> <%# Start navbar %>
+        <header>
+          <nav class="nav flex-row">
+            <li class="nav-item">
+              <a class="nav-link" href="<%= root_path %>">Home</a>
+            </li>
+            <% if !!current_admin %>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= admin_path(current_admin) %>">Admin Show</a>
+              </li>
+            <% end %>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= schools_path %>">Schools</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= students_path %>">Students</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= libraries_path %>">Libraries</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= books_path %>">Books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= borrows_path %>">Borrows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= holds_path %>">Holds</a>
+            </li>
+          </nav>
+        </header>
+      </div> <%# End navbar %>
+
       <div class="container-fluid wrapper"> <%# Start body %>      
         <div class="row">
           <%# Flash message for errors %>
