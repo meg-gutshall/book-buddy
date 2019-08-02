@@ -12,10 +12,17 @@
 <h2>Index Links</h2>
 <% if !!current_admin %>
   <%= link_to "Admin", admin_path(current_admin) %>
+  <%= link_to "Schools", admin_schools_path(current_admin) %>
+  <%= link_to "Students", admin_students_path(current_admin) %>
+  <%= link_to "Libraries", admin_libraries_path(current_admin) %>
+  <%= link_to "Books", admin_books_path(current_admin) %>
+  <%= link_to "Borrows", admin_borrows_path(current_admin) %>
+  <%= link_to "Holds", admin_holds_path(current_admin) %>
 <% end %>
-<%= link_to "Schools", schools_path %>
-<%= link_to "Students", students_path %>
-<%= link_to "Libraries", libraries_path %>
-<%= link_to "Books", books_path %>
-<%= link_to "Holds", holds_path %>
-<%= link_to "Borrows", borrows_path %>
+<% if !!current_student %>
+  <%= link_to "Students", school_students_path(current_student.school) %>
+  <%= link_to "Libraries", school_libraries_path(current_student.school) %>
+  <%= link_to "Books", school_books_path(current_student.school) %>
+  <%= link_to "Borrows", student_borrows_path(current_student) %>
+  <%= link_to "Holds", student_holds_path(current_student) %>
+<% end %>
