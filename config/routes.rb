@@ -36,6 +36,9 @@ Rails.application.routes.draw do
   end
   
   # Student nested resources
+  resources :schools do
+    resources :students
+    resources :libraries
     resources :books
   end
 
