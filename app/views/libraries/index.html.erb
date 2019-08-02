@@ -12,9 +12,9 @@
     <% @libraries.each do |library| %>
       <tr>
         <td><%= library.room_number %></td>
-        <td><%= link_to 'Show', library %></td>
-        <td><%= link_to 'Edit', edit_library_path(library) %></td>
-        <td><%= link_to 'Destroy', library, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Show", library %></td>
+        <td><%= link_to "Edit", edit_library_path(library) %></td>
+        <td><%= link_to "Delete", library, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -23,5 +23,4 @@
 <br>
 
 <%= hide_admin_action(link_to 'New Library', new_library_path) %>
-<%= hide_admin_action(tag.br) %><%= hide_admin_action(tag.br) %>
 <%= link_to "Home", root_path %>

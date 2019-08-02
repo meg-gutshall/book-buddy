@@ -18,9 +18,9 @@
         <td><%= borrow.renewed %></td>
         <td><%= borrow.returned %></td>
         <td><%= borrow.overdue %></td>
-        <td><%= link_to 'Show', borrow %></td>
-        <td><%= link_to 'Edit', edit_borrow_path(borrow) %></td>
-        <td><%= link_to 'Destroy', borrow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Show", borrow %></td>
+        <td><%= link_to "Edit", edit_borrow_path(borrow) %></td>
+        <td><%= link_to "Delete", borrow, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,5 +28,5 @@
 
 <br>
 
-<%= link_to 'New Borrow', new_borrow_path %><br><br>
+<%= link_to "New Borrow", new_borrow_path %>
 <%= link_to "Home", root_path %>

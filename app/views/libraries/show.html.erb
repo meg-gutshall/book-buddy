@@ -4,7 +4,10 @@
 </p>
 
 
-<%= link_to "Books", library_books_path(@library) %><br><br>
-<%= hide_admin_action(link_to "Edit", edit_library_path(@library)) %><%= hide_admin_action(" | ") %>
-<%= link_to "Back", libraries_path %> | 
+<%= link_to "Books", library_books_path(@library) %><br>
+
+<%= hide_admin_action(link_to "Edit", edit_library_path(@library)) %>
+<%= hide_admin_action(link_to "Delete", @library, method: :delete, data: { confirm: "Are you sure?" }) %>
+<%= link_to "Back", libraries_path %><br>
+
 <%= link_to "Home", root_path %>

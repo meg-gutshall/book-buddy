@@ -4,9 +4,11 @@
 </p>
 
 
-<%= link_to "Students", school_students_path(@school) %> | 
-<%= link_to "Libraries", school_libraries_path(@school) %><br><br>
+<%= link_to "Students", school_students_path(@school) %>
+<%= link_to "Libraries", school_libraries_path(@school) %><br>
 
-<%= hide_admin_action(link_to "Edit", edit_school_path(@school)) %><%= hide_admin_action(" | ") %>
-<%= link_to "Back", schools_path %> | 
+<%= hide_admin_action(link_to "Edit", edit_school_path(@school)) %>
+<%= hide_admin_action(link_to "Delete", @school, method: :delete, data: { confirm: "Are you sure?" }) %>
+<%= link_to "Back", schools_path %><br>
+
 <%= link_to "Home", root_path %>
