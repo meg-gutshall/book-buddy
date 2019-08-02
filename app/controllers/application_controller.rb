@@ -9,19 +9,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def student_school_stray
-    if current_student.school_id != School.find_by(id: params[:id])
-      flash[:alert] = "Permission denied: You may not view or edit another students' content."
-      redirect_to root_path and return
-    end
-  end
-
-  def admin_district_stray
-    current_admin.school_ids.include?(params[:id])
-      flash[:alert] = "Permission denied: You may not view or edit another school districts' content."
-      redirect_to root_path and return
-  end
-
   # Helper Methods provided by Devise
 
   # authenticate_student! – Signs student in or redirect
