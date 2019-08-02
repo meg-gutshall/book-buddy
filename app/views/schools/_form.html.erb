@@ -6,7 +6,7 @@
     <%= form.text_field :name %>
   </div>
 
-  <%= hidden_field_tag("admin_id", "current_admin.id") %>
+  <%= form.hidden_field(:admin_id, :value => current_admin.id) %>
 
   <div class="actions">
     <%= form.submit %>
