@@ -1,0 +1,41 @@
+<% if !!current_admin %>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= admin_path(current_admin) %>">Admin Show</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= admin_schools_path(current_admin) %>">Schools</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= admin_students_path(current_admin) %>">Students</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= admin_libraries_path(current_admin) %>">Libraries</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= admin_books_path(current_admin) %>">Books</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= admin_borrows_path(current_admin) %>">Borrows</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= admin_holds_path(current_admin) %>">Holds</a>
+  </li>
+<% end %>
+
+<% if !!current_student %>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= school_students_path(current_student.school) %>">Students</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= school_libraries_path(current_student.school) %>">Libraries</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= school_books_path(current_student.school) %>">Books</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= borrows_path %>">Borrows</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= holds_path %>">Holds</a>
+  </li>
+<% end %>
