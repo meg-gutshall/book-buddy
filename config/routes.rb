@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  # Home
   root to: 'welcome#home'
 
+  # Devise routes
   devise_for :admins, path: 'admin', controllers: { passwords: "admins/passwords", registrations: "admins/registrations", sessions: "admins/sessions" }
   resources :admins, path: 'admin', only: [:show]
   
@@ -23,12 +25,12 @@ Rails.application.routes.draw do
     resources :holds
   end
   
-  resources :schools do
+  # Admin nested resources
     resources :students
     resources :libraries
   end
   
-  resources :libraries do
+  # Student nested resources
     resources :books
   end
 
