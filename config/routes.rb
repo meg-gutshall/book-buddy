@@ -26,8 +26,13 @@ Rails.application.routes.draw do
   end
   
   # Admin nested resources
+  resources :admin do
+    resources :schools
     resources :students
     resources :libraries
+    resources :books
+    resources :borrows
+    resources :holds
   end
   
   # Student nested resources
