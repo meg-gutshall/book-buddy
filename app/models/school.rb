@@ -6,4 +6,10 @@ class School < ApplicationRecord
   has_many :libraries
   has_many :books, through: :libraries
   has_many :holds, through: :books
+
+  # Scope Methods
+  def self.student_specific(student)
+    includes(:students).where(students: student)
+  end
+
 end

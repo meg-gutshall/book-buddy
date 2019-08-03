@@ -6,7 +6,8 @@ class SchoolsController < ApplicationController
   # GET /schools
   def index
     # Scope schools index view to only what the admin themselves own
-    @schools = current_admin.schools
+    # @schools = current_admin.schools
+    @schools = School.student_specific(current_student)
   end
 
   # GET /schools/1

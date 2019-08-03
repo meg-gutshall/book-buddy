@@ -19,12 +19,19 @@ class Book < ApplicationRecord
   # attribute_method_prefix 'available_'
   # attribute_method_suffix '_currently_borrowed'
 
-  # Scope methods
-  scope :alphabetize_by_title, -> { order(:title, :author) }
-  scope :alphabetize_by_author, -> { order(:author, :title) }
+  # Scope Methods
+  def self.student_specific(student)
+    includes(library: :school).where(library_id: student.school.library_ids)
+  end
+  
   # TODO: Change this to a selection from drop down in `app/views/partials/_book_filter.html.erb`
-  scope :select_by_genre, -> { where("genre = ?", params[:genre]).alphabetize_by_title }
+  def select_by_genre(genre)
+    where("genre = ?", genre).abc_title
+  end
 
+  scope :abc_title, -> { order(:title, :author) }
+  scope :abc_author, -> { order(:author, :title) }
+  
   private
 
     # TODO: Use properties from borrows to create this instead

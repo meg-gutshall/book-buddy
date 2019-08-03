@@ -5,7 +5,11 @@ class Library < ApplicationRecord
   has_many :borrows, through: :books
   has_many :holds, through: :books
   
-  # Scope methods
+  # Scope Methods
+  def self.student_specific(student)
+    includes(school: :students).where(school_id: student.school_id)
+  end
+
   scope :alphabetize_by_school, -> { joins(:school).order(:name) }
 
 end

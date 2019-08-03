@@ -7,6 +7,12 @@ class Student < ApplicationRecord
 
   devise :database_authenticatable, :omniauthable, :registerable, :validatable
 
-  # Class Methods: full_name
+  # Scope Methods
+  def self.student_specific(student)
+    where(school_id: student.school_id)
+  end
+
+  # Class Methods
+  # full_name
 
 end

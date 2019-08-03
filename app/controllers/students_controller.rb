@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
   
   # GET /students
   def index
-    @students = Student.all
+    @students = Student.student_specific(current_student)
   end
 
   # GET /students/1

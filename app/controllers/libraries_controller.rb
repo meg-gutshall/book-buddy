@@ -4,7 +4,7 @@ class LibrariesController < ApplicationController
 
   # GET /libraries
   def index
-    @libraries = Library.all
+    @libraries = Library.student_specific(current_student)
   end
 
   # GET /libraries/1
