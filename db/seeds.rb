@@ -24,6 +24,9 @@ Admin.create(
 end
 
 # Faker student objects
+s1 = Student.create(school_id: 1, first_name: "Joe", last_name: "Student", password: "password", email: "joe@email.com")
+s2 = Student.create(school_id: 2, first_name: "Jill", last_name: "Student", password: "password", email: "jill@email.com")
+
 58.times do
   Student.create(
     school_id: 1,
