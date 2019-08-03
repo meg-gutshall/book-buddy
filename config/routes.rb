@@ -12,12 +12,12 @@ Rails.application.routes.draw do
   end
   
   # Devise routes
-  devise_for :admins, path: "admin", only: [:registrations, :sessions], controllers: { registrations: "admins/registrations", sessions: "admins/sessions" }
   devise_for :students, only: [:omniauth, :sessions], controllers: { omniauth: "students/omniauth", sessions: "students/sessions" }
   
   # Admin nested resources
-  resources :admins, path: "admin" do
-    resources :schools
+  scope :admin do
+    devise_for :admins, path: "", only: [:registrations, :sessions], controllers: { registrations: "admins/registrations", sessions: "admins/sessions" }
+    resources :admins, path: "", only: [:index]
     devise_for :students, only: [:registrations], controllers: { registrations: "students/registrations" }
     resources :students, only: [:index]
     resources :libraries
