@@ -14,12 +14,6 @@
   <li class="nav-item">
     <a class="nav-link" href="<%= admin_books_path(current_admin) %>">Books</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="<%= admin_borrows_path(current_admin) %>">Borrows</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="<%= admin_holds_path(current_admin) %>">Holds</a>
-  </li>
 <% end %>
 
 <% if !!current_student %>
@@ -33,9 +27,9 @@
     <a class="nav-link" href="<%= school_books_path(current_student.school) %>">Books</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= borrows_path %>">Borrows</a>
+    <a class="nav-link" href="<%= student_borrows_path(current_student) %>">Borrows</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= holds_path %>">Holds</a>
+    <a class="nav-link" href="<%= student_holds_path(current_student) %>">Holds</a>
   </li>
 <% end %>
