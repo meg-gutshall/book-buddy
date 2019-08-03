@@ -16,10 +16,11 @@ Rails.application.routes.draw do
     resources :holds
   end
   
+  devise_for :students, only: [:omniauth, :sessions], controllers: { omniauth: "students/omniauth", sessions: "students/sessions" }
   # Admin nested resources
   resources :admin do
     resources :schools
-    resources :students
+    devise_for :students, only: [:registrations], controllers: { registrations: "students/registrations" }
     resources :libraries
     resources :books
     resources :borrows
