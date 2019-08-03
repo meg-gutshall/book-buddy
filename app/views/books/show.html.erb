@@ -18,13 +18,16 @@
   <%= @book.copies %>
 </p>
 
-<%= link_to "New Borrow", new_borrow_path %>
-<%= link_to "New Hold", new_hold_path %><br>
+<%= link_to 'New Borrow', new_book_borrow_path(@book) %>
+<%= link_to 'New Hold', new_book_hold_path(@book) %><br>
 <%= hide_admin_action(link_to "Borrows History", book_borrows_path(@book)) %>
 <%= hide_admin_action(link_to "Holds History", book_holds_path(@book)) %>
 <%= hide_admin_action(tag.br) %>
-<%= hide_admin_action(link_to "Edit", edit_book_path(@book)) %>
-<%= hide_admin_action(link_to "Destroy", @book, method: :delete, data: { confirm: "Are you sure?" }) %>
+<%= hide_admin_action(link_to "Edit", edit_admin_book_path(current_admin, @book)) %>
+<%= hide_admin_action(link_to "Delete", admin_book_path(current_admin, @book), method: :delete, data: { confirm: "Are you sure?" }) %>
 <%= hide_admin_action(tag.br) %>
-<%= link_to "Back", books_path %>
+<%= hide_admin_action(link_to "Back", admin_books_path(current_admin)) %>
+<% if current_student %>
+  <%= link_to "Back", school_books_path(@book.library.school) %>
+<% end %>
 <%= link_to "Home", root_path %>

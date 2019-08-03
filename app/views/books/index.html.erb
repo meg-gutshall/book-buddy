@@ -18,9 +18,9 @@
         <td><%= book.author %></td>
         <td><%= book.genre %></td>
         <td><%= book.copies %></td>
-        <td><%= link_to "Show", book %></td>
-        <td><%= link_to "Edit", edit_book_path(book) %></td>
-        <td><%= link_to "Destroy", book, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <td><% if current_student %><%= link_to "Show", book %><% end %><%= hide_admin_action(link_to "Show", admin_book_path(current_admin, book)) %></td>
+        <td><%= link_to "Edit", edit_admin_book_path(current_admin, book) %></td>
+        <td><%= link_to "Destroy", admin_book_path(current_admin, book), method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,5 +28,5 @@
 
 <br>
 
-<%= hide_admin_action(link_to "New Book", new_book_path) %>
+<%= hide_admin_action(link_to "New Book", new_admin_book_path(current_admin)) %>
 <%= link_to "Home", root_path %>

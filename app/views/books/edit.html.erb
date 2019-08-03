@@ -3,4 +3,8 @@
 <%= render 'form', book: @book %>
 
 <%= link_to "Show", @book %>
-<%= link_to "Back", books_path %>
+<%= hide_admin_action(link_to "Back", admin_books_path(current_admin)) %>
+<% if current_student %>
+  <%= link_to "Back", school_books_path(@book.library.school) %>
+<% end %>
+
