@@ -18,8 +18,8 @@
   <%= @borrow.overdue %>
 </p>
 
-<%= link_to "Edit", edit_borrow_path(@borrow) %>
-<%= hide_admin_action(link_to "Delete", @borrow, method: :delete, data: { confirm: "Are you sure?" }) %>
-<%= link_to "Back", borrows_path %><br>
+<%= link_to "Edit", edit_student_borrow_path(current_student, @borrow) %>
+<%= hide_admin_action(link_to "Delete", student_borrow_path(current_student, @borrow), method: :delete, data: { confirm: "Are you sure?" }) %>
+<%= link_to "Back", student_borrows_path(current_student) %><br>
 
 <%= link_to "Home", root_path %>

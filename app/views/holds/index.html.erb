@@ -16,9 +16,9 @@
         <td><%= hold.available %></td>
         <td><%= hold.borrowed %></td>
         <td><%= hold.cancelled %></td>
-        <td><%= link_to "Show", hold %></td>
-        <td><%= link_to "Edit", edit_hold_path(hold) %></td>
-        <td><%= link_to "Delete", hold, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <td><%= link_to "Show", student_hold_path(current_student, hold) %></td>
+        <td><%= link_to "Edit", edit_student_hold_path(current_student, hold) %></td>
+        <td><%= hide_admin_action(link_to "Delete", student_hold_path(current_student, hold), method: :delete, data: { confirm: "Are you sure?" }) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,5 +26,5 @@
 
 <br>
 
-<%= link_to "New Hold", new_hold_path %>
+<%= link_to "New Hold", new_student_hold_path(current_student) %>
 <%= link_to "Home", root_path %>

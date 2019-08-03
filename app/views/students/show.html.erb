@@ -18,11 +18,11 @@
 <%= hide_admin_action(link_to "Borrows History", student_borrows_path(@student)) %>
 <%= hide_admin_action(link_to "Holds History", student_holds_path(@student)) %>
 <%= hide_admin_action(tag.br) %>
-<%= hide_admin_action(link_to "Edit", edit_student_admin_registration_path(current_admin)) %>
-<%= hide_admin_action(link_to "Delete", student_admin_registration_path(current_admin, @student), method: :delete, data: { confirm: "Are you sure?" }) %>
+<%= hide_admin_action(link_to "Edit", edit_student_registration_path(@student)) %>
+<%= hide_admin_action(link_to "Delete", @student, method: :delete, data: { confirm: "Are you sure?" }) %>
 <%= hide_admin_action(tag.br) %>
-<%= hide_admin_action(link_to "Back", admin_students_path(current_admin)) %>
+<%= hide_admin_action(link_to "Back", students_path) %>
 <% if current_student %>
-  <%= link_to "Back", school_students_path(@student) %>
+  <%= link_to "Back", school_students_path(@student.school) %>
 <% end %>
 <%= link_to "Home", root_path %>

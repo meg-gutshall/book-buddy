@@ -2,7 +2,9 @@
 
 <%= render 'form', book: @book %>
 
-<%= hide_admin_action(link_to "Back", admin_books_path(current_admin)) %>
+<br>
+
+<%= hide_admin_action(link_to "Back", books_path) %>
 <% if current_student %>
-  <%= link_to "Back", school_books_path(@book.library.school) %>
+  <%= link_to "Back", school_books_path(current_student.school) %>
 <% end %>

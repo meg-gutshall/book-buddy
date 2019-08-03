@@ -13,8 +13,8 @@
   <%= @hold.cancelled %>
 </p>
 
-<%= link_to "Edit", edit_hold_path(@hold) %>
-<%= hide_admin_action(link_to "Delete", @hold, method: :delete, data: { confirm: "Are you sure?" }) %>
-<%= link_to "Back", holds_path %><br>
+<%= link_to "Edit", edit_student_hold_path(current_student, @hold) %>
+<%= hide_admin_action(link_to "Delete", student_hold_path(current_student, @hold), method: :delete, data: { confirm: "Are you sure?" }) %>
+<%= link_to "Back", student_holds_path(current_student) %><br>
 
 <%= link_to "Home", root_path %>

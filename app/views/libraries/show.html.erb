@@ -3,11 +3,16 @@
   <%= @library.room_number %>
 </p>
 
-
-<%= link_to "Books", library_books_path(@library) %><br>
+<%= hide_admin_action(link_to "Books", books_path) %><%= hide_admin_action(tag.br) %>
+<% if current_student %>
+  <%= link_to "Books", school_books_path(@library.school) %><br>
+<% end %>
 
 <%= hide_admin_action(link_to "Edit", edit_library_path(@library)) %>
 <%= hide_admin_action(link_to "Delete", @library, method: :delete, data: { confirm: "Are you sure?" }) %>
-<%= link_to "Back", libraries_path %><br>
+<%= hide_admin_action(link_to "Back", libraries_path) %><%= hide_admin_action(tag.br) %>
+<% if current_student %>
+  <%= link_to "Back", school_libraries_path(@library.school) %><br>
+<% end %>
 
 <%= link_to "Home", root_path %>

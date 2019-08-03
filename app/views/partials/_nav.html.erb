@@ -1,18 +1,18 @@
 <% if !!current_admin %>
   <li class="nav-item">
-    <a class="nav-link" href="<%= admin_path(current_admin) %>">Admin Show</a>
+    <a class="nav-link" href="<%= admin_registration_path(current_admin) %>">Admin Show</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= admin_schools_path(current_admin) %>">Schools</a>
+    <a class="nav-link" href="<%= schools_path %>">Schools</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= admin_students_path(current_admin) %>">Students</a>
+    <a class="nav-link" href="<%= students_path %>">Students</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= admin_libraries_path(current_admin) %>">Libraries</a>
+    <a class="nav-link" href="<%= libraries_path %>">Libraries</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= admin_books_path(current_admin) %>">Books</a>
+    <a class="nav-link" href="<%= books_path %>">Books</a>
   </li>
 <% end %>
 

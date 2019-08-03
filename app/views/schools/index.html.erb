@@ -13,8 +13,8 @@
       <tr>
         <td><%= school.name %></td>
         <td><%= link_to "Show", school %></td>
-        <td><%= link_to "Edit", edit_school_path(school) %></td>
-        <td><%= link_to "Delete", school, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <td><%= hide_admin_action(link_to "Edit", edit_school_path(school)) %></td>
+        <td><%= hide_admin_action(link_to "Delete", school, method: :delete, data: { confirm: "Are you sure?" }) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,5 +22,5 @@
 
 <br>
 
-<%= hide_admin_action(link_to 'New School', new_school_path) %>
+<%= hide_admin_action(link_to "New School", new_school_path) %>
 <%= link_to "Home", root_path %>

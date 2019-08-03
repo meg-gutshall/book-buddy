@@ -4,4 +4,7 @@
 
 <br>
 
-<%= link_to "Back", libraries_path %>
+<%= hide_admin_action(link_to "Back", libraries_path) %>
+<% if current_student %>
+  <%= link_to "Back", school_libraries_path(current_student.school) %>
+<% end %>

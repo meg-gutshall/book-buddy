@@ -2,5 +2,6 @@
 
 <%= render 'form', borrow: @borrow %>
 
-<%= link_to "Show", @borrow %>
-<%= link_to "Back", borrows_path %>
+<br>
+
+<%= link_to "Back", student_borrow_path(current_student, @borrow) %>
