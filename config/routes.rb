@@ -2,11 +2,6 @@ Rails.application.routes.draw do
   # Home
   root to: 'welcome#home'
 
-  # Devise routes
-  devise_for :admins, path: 'admin', controllers: { passwords: "admins/passwords", registrations: "admins/registrations", sessions: "admins/sessions" }
-  
-  devise_for :students, path: 'students', controllers: { omniauth: "students/omniauth", passwords: "students/passwords", registrations: "students/registrations", sessions: "students/sessions" }
-  
   # Define concerns
   concern :borrowable do
     resources :borrows
@@ -16,15 +11,17 @@ Rails.application.routes.draw do
     resources :holds
   end
   
+  # Devise routes
+  devise_for :admins, path: "admin", only: [:registrations, :sessions], controllers: { registrations: "admins/registrations", sessions: "admins/sessions" }
   devise_for :students, only: [:omniauth, :sessions], controllers: { omniauth: "students/omniauth", sessions: "students/sessions" }
+  
   # Admin nested resources
-  resources :admin do
+  resources :admins, path: "admin" do
     resources :schools
     devise_for :students, only: [:registrations], controllers: { registrations: "students/registrations" }
+    resources :students, only: [:index]
     resources :libraries
     resources :books
-    resources :borrows
-    resources :holds
   end
   
   # Student nested resources
