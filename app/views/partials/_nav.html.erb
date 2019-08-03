@@ -1,6 +1,6 @@
 <% if !!current_admin %>
   <li class="nav-item">
-    <a class="nav-link" href="<%= admin_registration_path(current_admin) %>">Admin Show</a>
+    <a class="nav-link" href="<%= admin_registration_path(current_admin) %>">Admin Profile</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="<%= schools_path %>">Schools</a>
@@ -27,9 +27,9 @@
     <a class="nav-link" href="<%= school_books_path(current_student.school) %>">Books</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= student_borrows_path(current_student) %>">Borrows</a>
+    <a class="nav-link" href="<%= student_borrows_path(current_student) %>">My Borrows</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= student_holds_path(current_student) %>">Holds</a>
+    <a class="nav-link" href="<%= student_holds_path(current_student) %>">My Holds</a>
   </li>
 <% end %>
