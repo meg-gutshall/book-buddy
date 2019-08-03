@@ -13,16 +13,19 @@
   <%= @student.email %>
 </p>
 
-<%= link_to 'New Borrow', new_student_borrow_path(@student) %>
-<%= link_to 'New Hold', new_student_hold_path(@student) %><br>
+<% if !!current_student && @student == current_student %>
+  <%= link_to 'New Borrow', new_student_borrow_path(@student) %>
+  <%= link_to 'New Hold', new_student_hold_path(@student) %><br>
+<% end %>
 <%= hide_admin_action(link_to "Borrows History", student_borrows_path(@student)) %>
 <%= hide_admin_action(link_to "Holds History", student_holds_path(@student)) %>
 <%= hide_admin_action(tag.br) %>
-<%= hide_admin_action(link_to "Edit", edit_student_registration_path(@student)) %>
+<% if !!current_student && @student == current_student %>
+  <%= link_to "Edit", edit_student_registration_path(@student) %>
+<% end %>
 <%= hide_admin_action(link_to "Delete", @student, method: :delete, data: { confirm: "Are you sure?" }) %>
-<%= hide_admin_action(tag.br) %>
-<%= hide_admin_action(link_to "Back", students_path) %>
+<%= hide_admin_action(link_to "Back", students_path) %><%= hide_admin_action(tag.br) %>
 <% if current_student %>
-  <%= link_to "Back", school_students_path(@student.school) %>
+  <%= link_to "Back", school_students_path(@student.school) %><br>
 <% end %>
 <%= link_to "Home", root_path %>

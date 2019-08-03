@@ -25,9 +25,8 @@
 <%= hide_admin_action(tag.br) %>
 <%= hide_admin_action(link_to "Edit", edit_book_path(@book)) %>
 <%= hide_admin_action(link_to "Delete", @book, method: :delete, data: { confirm: "Are you sure?" }) %>
-<%= hide_admin_action(tag.br) %>
-<%= hide_admin_action(link_to "Back", books_path) %>
+<%= hide_admin_action(link_to "Back", books_path) %><%= hide_admin_action(tag.br) %>
 <% if current_student %>
-  <%= link_to "Back", school_books_path(current_student.school) %>
+  <%= link_to "Back", school_books_path(current_student.school) %><br>
 <% end %>
 <%= link_to "Home", root_path %>
