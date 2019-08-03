@@ -1,6 +1,12 @@
 class AdminsController < ApplicationController
   before_action :admin_only
 
+  # GET /admin
+  def index
+    # TODO: Add master control
+    redirect_to current_admin
+  end
+
   # GET /admin/1
   def show
   end
