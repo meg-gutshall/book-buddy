@@ -8,8 +8,9 @@ class AdminsController < ApplicationController
   end
 
   # GET /admin/1
-  def show
-  end
+  # def show
+    # Not needed unless I want to add further functioning here
+  # end
 
   private
     # Never trust parameters from the scary internet, only allow the white list through
