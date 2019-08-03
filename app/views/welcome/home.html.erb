@@ -7,7 +7,7 @@
 <%= link_to "Create New Admin", new_admin_registration_path %><br>
 <%= link_to "Student Login", new_student_session_path %>
 <%= link_to "Student Logout", destroy_student_session_path, method: :delete %>
-<%= link_to "Create New Student", new_student_registration_path %><br>
+<%= link_to "Create New Student", new_student_admin_registration_path(current_admin) %><br>
 
 <h2>Index Links</h2>
 <% if !!current_admin %>
@@ -16,8 +16,6 @@
   <%= link_to "Students", admin_students_path(current_admin) %>
   <%= link_to "Libraries", admin_libraries_path(current_admin) %>
   <%= link_to "Books", admin_books_path(current_admin) %>
-  <%= link_to "Borrows", admin_borrows_path(current_admin) %>
-  <%= link_to "Holds", admin_holds_path(current_admin) %>
 <% end %>
 <% if !!current_student %>
   <%= link_to "Students", school_students_path(current_student.school) %>
