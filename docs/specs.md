@@ -24,3 +24,7 @@
 - [ ] Limited logic in controllers
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate
+
+## Finish
+
+- [ ] Break down scope methods all the way via AR queries
