@@ -1,5 +1,6 @@
 class School < ApplicationRecord
-  has_and_belongs_to_many :admins, join_table: "districts"
+  # attributes: { name:string }
+  belongs_to :admin
   has_many :students
   has_many :borrows, through: :students
   has_many :libraries
