@@ -1,7 +1,9 @@
 class Hold < ApplicationRecord
-  # attributes: { available:boolean, borrowed:boolean, cancelled:boolean, student_id:integer, book_id:integer }
   belongs_to :student
   belongs_to :book
+
+  validates :available, :borrowed, :cancelled, inclusion: { in: [true, false] }
+  validates_associated :student, :book
 
   # Set default: available, borrowed, and cancelled as false
   attribute :available, :boolean, default: false

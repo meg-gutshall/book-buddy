@@ -6,6 +6,8 @@ class School < ApplicationRecord
   has_many :books, through: :libraries
   has_many :holds, through: :books
 
+  validates :name, presence: :true
+
   # Scope Methods
   def self.student_specific(student)
     includes(:students).where(students: student)

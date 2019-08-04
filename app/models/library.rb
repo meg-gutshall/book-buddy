@@ -1,9 +1,12 @@
 class Library < ApplicationRecord
-  # attributes: { room_number:integer, school_id:integer }
   belongs_to :school
   has_many :books
   has_many :borrows, through: :books
   has_many :holds, through: :books
+
+  validates :room, prescence: :true
+  validates :room, uniqueness: { scope: :school, message: "You have already created a library in this room." }
+  validates_associated :school
   
   # Scope Methods
   def self.student_specific(student)

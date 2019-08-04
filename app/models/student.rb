@@ -1,11 +1,13 @@
 class Student < ApplicationRecord
-  # attributes: { first_name:string, last_name:string, email:string, password:string, school_id:integer }
   belongs_to :school
   has_many :borrows
   has_many :books, through: :borrows
   has_many :holds, through: :books
 
   devise :database_authenticatable, :omniauthable, :registerable, :validatable
+
+  validates :first_name, :last_name, presence: true
+  validates_associated :school
 
   # Scope Methods
   def self.student_specific(student)

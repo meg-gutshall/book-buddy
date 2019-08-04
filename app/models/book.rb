@@ -1,21 +1,21 @@
 class Book < ApplicationRecord
-  # attributes: { title:string, author:string, genre:string, copies:integer, library_id:integer }
   belongs_to :library
   has_many :borrows
   has_many :students, through: :borrows
   has_many :holds
   # has_many :students, through: :holds
 
-  # Add validations
-  # Does not let a book with 0 `available_copies` be borrowed
-
-  
   # TODO: Use properties from borrows to create this instead
   # Add attribute methods
   attribute :copies, :integer
   # attribute_method_prefix 'available_'
   # attribute_method_suffix '_currently_borrowed'
 
+  # TODO: Does not let a book with 0 `available_copies` be borrowed
+  validates :title, :author, :genre, :copies, prescence: :true
+  validates :copies, numericality: { only_integer: true, greater_than: 0 }
+  validates_associated :library
+  
   # Scope Methods
   def self.student_specific(student)
     includes(library: :school).where(library_id: student.school.library_ids)
