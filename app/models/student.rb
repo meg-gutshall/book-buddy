@@ -12,7 +12,9 @@ class Student < ApplicationRecord
     where(school_id: student.school_id)
   end
 
-  # Class Methods
-  # full_name
+  # Methods
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 
 end
