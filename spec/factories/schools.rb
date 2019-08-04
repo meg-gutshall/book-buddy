@@ -43,7 +43,7 @@ FactoryBot.define do
   # library factory with a `belongs_to` association for the school
   factory :library do
     school
-    room_number { Faker::Number.number(3) }
+    room { Faker::Number.number(3) }
 
     # library factory with `has_many` association for books
     factory :library_with_books do

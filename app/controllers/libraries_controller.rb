@@ -55,6 +55,6 @@ class LibrariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through
     def library_params
-      params.require(:library).permit(:room_number, :school_id)
+      params.require(:library).permit(:room, :school_id)
     end
 end

@@ -51,14 +51,14 @@ end
 2.times do
   Library.create(
     school_id: 1,
-    room_number: Faker::Number.number(3)
+    room: Faker::Number.number(3)
   )
 end
 
 3.times do
   Library.create(
     school_id: 2,
-    room_number: Faker::Number.number(3)
+    room: Faker::Number.number(3)
   )
 end
 
