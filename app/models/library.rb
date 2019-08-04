@@ -4,7 +4,7 @@ class Library < ApplicationRecord
   has_many :borrows, through: :books
   has_many :holds, through: :books
 
-  validates :room, prescence: :true
+  validates :room, presence: true
   validates :room, uniqueness: { scope: :school, message: "You have already created a library in this room." }
   validates_associated :school
   

@@ -12,7 +12,7 @@ class Book < ApplicationRecord
   # attribute_method_suffix '_currently_borrowed'
 
   # TODO: Does not let a book with 0 `available_copies` be borrowed
-  validates :title, :author, :genre, :copies, prescence: :true
+  validates :title, :author, :genre, :copies, presence: true
   validates :copies, numericality: { only_integer: true, greater_than: 0 }
   validates_associated :library
   

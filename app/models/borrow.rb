@@ -12,7 +12,7 @@ class Borrow < ApplicationRecord
   attribute :overdue, :boolean, default: false
   # attribute_method_prefix 'date_'
 
-  validates :due_date, prescence: :true
+  validates :due_date, presence: true
   validates :due_date, format: { with: /\A[A-Z][a-z]{2,5}day, [A-Z][a-z]{2,8} \d{2}, \d{4}\z/ }
   validates :renewed, :returned, :overdue, inclusion: { in: [true, false] }
   validates_associated :student, :book
