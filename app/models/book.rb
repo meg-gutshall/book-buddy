@@ -9,9 +9,6 @@ class Book < ApplicationRecord
   # Add validations
   # Does not let a book with 0 `available_copies` be borrowed
 
-  ## TODO: Move to `app/helpers/books_helper.rb` ##
-  # If there are > 0 available copies, show a borrow button
-  # If there are 0 available copies, show a hold button
   
   # TODO: Use properties from borrows to create this instead
   # Add attribute methods
