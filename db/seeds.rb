@@ -5,27 +5,47 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
 
-# Admin object
-Admin.create(
+# Admin objects
+meg = Admin.create(
   first_name: "Meg",
   last_name: "Gutshall",
   password: "password",
-  email: "eggs4megs@meg.com"
+  email: "meg@meg.com"
+)
+
+pip = Admin.create(
+  first_name: "Pip",
+  last_name: "Gutshall",
+  password: "password",
+  email: "pip@pip.com"
 )
 
 # Faker school objects
-2.times do
-  School.create(
-    admin_id: 1,
-    name: Faker::Address.community
-  )
-end
+otis = School.create(
+  name: "Otis Elementary School"
+)
+
+redding = School.create(
+  name: "Redding High School"
+)
 
 # Faker student objects
-s1 = Student.create(school_id: 1, first_name: "Joe", last_name: "Student", password: "password", email: "joe@email.com")
-s2 = Student.create(school_id: 2, first_name: "Jill", last_name: "Student", password: "password", email: "jill@email.com")
+s1 = Student.create(
+  school_id: 1,
+  first_name: "Joe",
+  last_name: "Student",
+  password: "password",
+  email: "joe@email.com"
+)
+
+s2 = Student.create(
+  school_id: 2,
+  first_name: "Jill",
+  last_name: "Student",
+  password: "password",
+  email: "jill@email.com"
+)
 
 58.times do
   Student.create(
