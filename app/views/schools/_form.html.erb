@@ -1,5 +1,5 @@
 <%= form_with(model: school, local: true) do |form| %>
-  <%= render partial: "partials/form_errors", locals: { resource: school } %>
+  <%= render partial: "partials/form_errors", locals: { resource: @school } %>
 
   <div class="field">
     <%= form.label :name %>

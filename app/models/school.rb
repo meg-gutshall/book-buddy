@@ -1,5 +1,6 @@
 class School < ApplicationRecord
-  has_and_belongs_to_many :admins, join_table: "districts"
+  has_many :admin_schools
+  has_many :admins, through: :admin_schools
   has_many :students
   has_many :borrows, through: :students
   has_many :libraries

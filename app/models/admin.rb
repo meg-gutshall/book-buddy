@@ -1,5 +1,6 @@
 class Admin < ApplicationRecord
-  has_and_belongs_to_many :schools, join_table: "districts"
+  has_many :admin_schools
+  has_many :schools, through: :admin_schools
 
   devise :database_authenticatable, :registerable, :validatable
 

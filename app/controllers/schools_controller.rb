@@ -7,7 +7,8 @@ class SchoolsController < ApplicationController
   def index
     # Scope schools index view to only what the admin themselves own
     # @schools = current_admin.schools
-    @schools = School.student_specific(current_student)
+    @schools = School.all
+    # @schools = School.student_specific(current_student)
   end
 
   # GET /schools/1
@@ -25,7 +26,7 @@ class SchoolsController < ApplicationController
 
   # POST /schools
   def create
-    @school = School.new(school_params)
+    @school = current_admin.schools.build(school_params)
 
       if @school.save
         redirect_to @school, notice: 'School was successfully created.'
@@ -58,7 +59,7 @@ class SchoolsController < ApplicationController
     end
 
     def admin_district_stray
-      unless current_admin.school_ids.include?(params[:id].to_i)
+      unless current_admin.schools.include?(@school)
         flash[:alert] = "Permission denied: You may not view or edit another school districts' content."
         redirect_to root_path and return
       end
