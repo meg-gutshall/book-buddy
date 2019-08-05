@@ -20,6 +20,10 @@ class Book < ApplicationRecord
   def self.student_specific(student)
     includes(library: :school).where(library_id: student.school.library_ids)
   end
+
+  def self.admin_specific(admin)
+    # includes(library: :school).where(library_id: admin.school.library_ids)
+  end
   
   # TODO: Change this to a selection from drop down in `app/views/partials/_book_filter.html.erb`
   def select_by_genre(genre)

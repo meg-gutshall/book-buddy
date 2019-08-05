@@ -12,6 +12,11 @@ class Hold < ApplicationRecord
 
   before_validation :borrow_book
 
+  # Scope Methods
+  def self.admin_specific(admin)
+    # includes(library: :school).where(library_id: student.school.library_ids)
+  end
+
   private
 
     # Creates a borrow if the hold is picked up

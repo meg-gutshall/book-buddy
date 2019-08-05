@@ -13,4 +13,8 @@ class School < ApplicationRecord
     includes(:students).where(students: student)
   end
 
+  def self.admin_specific(admin)
+    # includes(:admins).where(admins: admin)
+  end
+
 end

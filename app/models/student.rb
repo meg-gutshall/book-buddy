@@ -14,6 +14,10 @@ class Student < ApplicationRecord
     where(school_id: student.school_id)
   end
 
+  def self.admin_specific(admin)
+    # where(school: admin.schools)
+  end
+
   # Methods
   def full_name
     "#{first_name} #{last_name}"

@@ -13,6 +13,10 @@ class Library < ApplicationRecord
     includes(school: :students).where(school_id: student.school_id)
   end
 
+  def self.admin_specific(admin)
+    # includes(school: :admins).where(school_id: admin.school_id)
+  end
+
   scope :alphabetize_by_school, -> { joins(:school).order(:name) }
 
 end

@@ -20,6 +20,10 @@ class Borrow < ApplicationRecord
   # Scope Methods
   scope :current_borrows, -> { where(returned: false) }
 
+  def self.admin_specific(admin)
+    # includes(library: :school).where(library_id: student.school.library_ids)
+  end
+
   # Class Methods
   # TODO: If there is a hold on the book, students cannot renew it --> use book_id
 
