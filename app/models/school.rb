@@ -8,6 +8,18 @@ class School < ApplicationRecord
   has_many :holds, through: :books
 
   validates :name, presence: true
+  validates_associated :admins
+
+  def admin_ids=(ids)
+    ids.each do |id|
+      admin = Admin.find_by(id: id)
+      self.admins << admin
+    end
+  end
+
+  def admin_ids
+    @admin_ids
+  end
 
   # Scope Methods
   def self.student_specific(student)

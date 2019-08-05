@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   # Admin nested resources
   scope :admin do
     devise_for :admins, path: "", controllers: { registrations: "admins/registrations", sessions: "admins/sessions" }
-    resources :admins, path: "", only: [:index]
     resources :students, only: [:index]
     resources :libraries
     resources :books

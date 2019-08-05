@@ -1,13 +1,12 @@
 class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
-  before_action :admin_district_stray, only: [:show, :edit, :update, :destroy]
   before_action :admin_only
 
   # GET /schools
   def index
     # Scope schools index view to only what the admin themselves own
-    # @schools = current_admin.schools
     @schools = School.all
+    # @schools = current_admin.schools
     # @schools = School.student_specific(current_student)
   end
 
@@ -58,15 +57,8 @@ class SchoolsController < ApplicationController
       @school = School.find_by(id: params[:id])
     end
 
-    def admin_district_stray
-      unless current_admin.schools.include?(@school)
-        flash[:alert] = "Permission denied: You may not view or edit another school districts' content."
-        redirect_to root_path and return
-      end
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through
     def school_params
-      params.require(:school).permit(:name)
+      params.require(:school).permit(:name, admin_ids: [])
     end
 end

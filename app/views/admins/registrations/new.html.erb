@@ -19,6 +19,14 @@
   </div>
 
   <div class="field">
+    <%= f.label "Select your schools:" %><br />
+    <% School.all.each do |school| %>
+      <%= f.check_box("school_ids", {:multiple => true}, "#{school.name}") %>
+      <%= f.label "#{school.name}" %><br>
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
