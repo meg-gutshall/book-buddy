@@ -44,7 +44,8 @@ group :development, :test do
   # Use dotenv to hold your db secrets
   gem 'dotenv-rails', '~> 2.7'
   # Use Puma as the app server
-  gem 'puma', '~> 4.0'
+  # Fix puma gem vulnerability
+  gem 'puma', '>= 4.3.1'
   
   ## Testing ##
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
