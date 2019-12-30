@@ -88,3 +88,6 @@ group :development do
   gem 'spring', '~> 2.1'
   gem 'spring-watcher-listen', '~> 2.0'
 end
+
+# Fix rack gem vulnerability
+gem 'rack', '>= 2.0.8'
